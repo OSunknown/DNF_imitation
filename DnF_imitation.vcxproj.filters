@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="시작점">
+      <UniqueIdentifier>{4b4fa7a2-367d-4eca-963e-e47aa385695a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCore">
+      <UniqueIdentifier>{f54b5c3e-7b52-4c16-b4ac-1723d12e8e3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCore\Managers">
+      <UniqueIdentifier>{0f4b3191-f88e-4495-b131-438560ae3e76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCore\Scenes">
+      <UniqueIdentifier>{25278569-754e-4395-a281-119348ad984d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCore\Scenes\Base">
+      <UniqueIdentifier>{fc6622ea-9625-4627-acf6-07ac799489fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCore\Shaders">
+      <UniqueIdentifier>{e65cda75-4ac2-4390-8a89-d9f5589526ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCore\Shaders\PsVs">
+      <UniqueIdentifier>{f265d180-189d-4756-9e13-2094dcb84f88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCore\Shaders\ShaderClass">
+      <UniqueIdentifier>{425c4cf4-a72b-4de0-8541-5335a50a38db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCore\GameObjects">
+      <UniqueIdentifier>{21246b2a-f56c-46dd-8da1-1b0717745f7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="GameCore\GameObjects\UIObject">
+      <UniqueIdentifier>{5c01fc2f-7809-4ce1-a456-0628fee117d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCore\GameObjects\BaseObject">
+      <UniqueIdentifier>{5915cb53-ba70-4a99-9fe4-04088cb431fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCore\GameObjects\worldObject">
+      <UniqueIdentifier>{e6151b5d-5b3f-4ede-8281-55e223bc67f3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>시작점</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>시작점</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>GameCore\Scenes\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="DxManager.cpp">
+      <Filter>GameCore\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>시작점</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>GameCore</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>GameCore\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="ElvenguardScene.cpp">
+      <Filter>GameCore\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureShaderClass.cpp">
+      <Filter>GameCore\Shaders\ShaderClass</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>GameCore\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>GameCore\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderManager.cpp">
+      <Filter>GameCore\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Animator.cpp">
+      <Filter>GameCore</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteShaderClass.cpp">
+      <Filter>GameCore\Shaders\ShaderClass</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>GameCore\GameObjects\BaseObject</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayableCharacterController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkManager.cpp">
+      <Filter>GameCore\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelectScene.cpp">
+      <Filter>GameCore\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="MasterScene.cpp">
+      <Filter>GameCore\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMaster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelectButtonObject.cpp">
+      <Filter>GameCore\GameObjects\UIObject</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundAniObject.cpp">
+      <Filter>GameCore\GameObjects\worldObject</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundSpriteObject.cpp">
+      <Filter>GameCore\GameObjects\worldObject</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseCharacterObject.cpp">
+      <Filter>GameCore\GameObjects\worldObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteObject.cpp">
+      <Filter>GameCore\GameObjects\BaseObject</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageObject.cpp">
+      <Filter>GameCore\GameObjects\BaseObject</Filter>
+    </ClCompile>
+    <ClCompile Include="EquipmentObject.cpp">
+      <Filter>GameCore\GameObjects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>시작점</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>GameCore\Scenes\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="DxManager.h">
+      <Filter>GameCore\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>시작점</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>GameCore</Filter>
+    </ClInclude>
+    <ClInclude Include="ElvenguardScene.h">
+      <Filter>GameCore\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureShaderClass.h">
+      <Filter>GameCore\Shaders\ShaderClass</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>GameCore\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>GameCore\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>GameCore\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderManager.h">
+      <Filter>GameCore\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Animator.h">
+      <Filter>GameCore</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteShaderClass.h">
+      <Filter>GameCore\Shaders\ShaderClass</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>GameCore\GameObjects\BaseObject</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayableCharacterController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkManager.h">
+      <Filter>GameCore\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelectScene.h">
+      <Filter>GameCore\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="MasterScene.h">
+      <Filter>GameCore\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMaster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelectButtonObject.h">
+      <Filter>GameCore\GameObjects\UIObject</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCharacterObject.h">
+      <Filter>GameCore\GameObjects\worldObject</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundAniObject.h">
+      <Filter>GameCore\GameObjects\worldObject</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundSpriteObject.h">
+      <Filter>GameCore\GameObjects\worldObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteObject.h">
+      <Filter>GameCore\GameObjects\BaseObject</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageObject.h">
+      <Filter>GameCore\GameObjects\BaseObject</Filter>
+    </ClInclude>
+    <ClInclude Include="EquipmentObject.h">
+      <Filter>GameCore\GameObjects</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="texture.ps">
+      <Filter>GameCore\Shaders\PsVs</Filter>
+    </None>
+    <None Include="texture.vs">
+      <Filter>GameCore\Shaders\PsVs</Filter>
+    </None>
+    <None Include="sprite.ps">
+      <Filter>GameCore\Shaders\PsVs</Filter>
+    </None>
+    <None Include="sprite.vs">
+      <Filter>GameCore\Shaders\PsVs</Filter>
+    </None>
+  </ItemGroup>
+</Project>
