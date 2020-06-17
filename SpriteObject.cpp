@@ -215,7 +215,6 @@ D3DXMATRIX SpriteObject::GetWorldMatrix()
 	}
 	else
 	{
-		printf("0,0,0");
 		D3DXMatrixTranslation(&TMatrix, 0, 0, 0);
 	}
 	_worldMatrix = SMatrix * RMatrix * TMatrix;
@@ -365,19 +364,16 @@ void SpriteObject::SetRect()
 		// Calculate the screen coordinates of the right side of the bitmap.
 		right = left + width;
 	}
-	
-	
+		
 	// Calculate the screen coordinates of the top of the bitmap.
 	top = ((height* _currentsprite->pivot.y))-_currentsprite->offset.y;
 
 	// Calculate the screen coordinates of the bottom of the bitmap.
 	bottom = top - height;
 
-	//float width = _currentsprite->width;// *_scale.x;
-	//float height = _currentsprite->height;// *_scale.y;
 	if (UIType == true)
 	{
-		printf("ui update");
+		//UI로 전환될때 화면의 왼쪽 아래 부분을 기준(0,0)으로 잡는다.
 		float screenWidth = App.DxscreenWidth / 2.0f;
 		float screenHeight = App.DxscreenHeight / 2.0f;
 		left += MainCamera.GetPosition().x + _position.x - screenWidth;
@@ -386,28 +382,4 @@ void SpriteObject::SetRect()
 		bottom += MainCamera.GetPosition().y + _position.y - screenHeight;
 	}
 	
-
-	//if (Filp)
-	//{
-	//	// Screen에서 
-	//	left = MainCamera.GetPosition().x + _position.x - screenWidth + ((width * (1 - _currentsprite->pivot.x)) * -1) - _currentsprite->offset.x;
-
-	//	// Calculate the screen coordinates of the right side of the bitmap.
-	//	right = left + width;
-	//}
-	//else
-	//{
-	//	// Calculate the screen coordinates of the left side of the bitmap.
-	//	left = MainCamera.GetPosition().x + _position.x - screenWidth + ((width * _currentsprite->pivot.x) * -1) + _currentsprite->offset.x;
-
-	//	// Calculate the screen coordinates of the right side of the bitmap.
-	//	right = left + width;
-	//}
-
-
-	//// Calculate the screen coordinates of the top of the bitmap.
-	//top = MainCamera.GetPosition().y + _position.y - screenHeight + ((height * _currentsprite->pivot.y)) + _currentsprite->offset.y;
-
-	//// Calculate the screen coordinates of the bottom of the bitmap.
-	//bottom = top - height;
 }

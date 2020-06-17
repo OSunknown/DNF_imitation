@@ -101,7 +101,9 @@ HRESULT MasterScene::ChangeScene(sceneNames sceneNumber)
 	for (int i = 1; i < UI.size(); i++)
 	{
 		UI[UI.size() - i]->Shutdown();
+		delete UI[UI.size() - i];
 	}
+
 	UI.clear();
 	switch (sceneNumber)
 	{
@@ -133,6 +135,11 @@ void MasterScene::AddCharacter(int slotNum, D3DXVECTOR2 position)
 	GameObjects.push_back(bco);
 }
 
+void MasterScene::AddUIObject(GameObject* ui)
+{
+	UI.push_back(ui);
+}
+
 void MasterScene::LoadScene_CharacterSelect()
 {
 	//IMAGEMANAGER.LoadImagePack(1);
@@ -143,7 +150,7 @@ void MasterScene::LoadScene_CharacterSelect()
 	CharacterSelectButtonObject* CSBtn;
 	int index = 0;
 	//UI 타입이니까 화면 기준으로 위치 잡아주세요
-	for (int i = 1; i > -1; i--)
+	for (int i = 0; i < 2; i++)
 	{
 		for (int j = -2; j <= 2; j++)
 		{

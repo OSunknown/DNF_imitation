@@ -57,6 +57,10 @@ void BaseCharacterObject::Frame()
 
 void BaseCharacterObject::Shutdown()
 {
+	for (int i = 0; i < equipEquipment.size(); i++)
+	{
+		equipEquipment[i].Shutdown();
+	}
 }
 
 void BaseCharacterObject::init(int slotNum)

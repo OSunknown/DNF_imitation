@@ -39,6 +39,11 @@ void EquipmentObject::Frame()
 
 void EquipmentObject::Shutdown()
 {
+	if (_currentsprite != NULL)
+	{
+		_currentsprite->Shutdown();
+		delete _currentsprite;
+	}
 }
 
 void EquipmentObject::SetUiType()

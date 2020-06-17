@@ -34,9 +34,11 @@ void CharacterSelectButtonObject::Init(int slotNumber, float PosX, float PosY)
 
 	if (GM.slots.size() > _slotNumber)
 	{
-		printf("%f %f", MainCamera.ScreenToWorldPoint(_position).x, MainCamera.ScreenToWorldPoint(_position).y);
-		//MS.AddCharacter(_slotNumber, MainCamera.ScreenToWorldPoint( _position));
-		MS.AddCharacter(_slotNumber, (_position));
+		slotCharacter = new BaseCharacterObject();
+		slotCharacter->init(slotNumber);
+		slotCharacter->SetUiType();
+		slotCharacter->SetPosition(_position + D3DXVECTOR2(0, -50));
+		MS.AddUIObject(slotCharacter);
 	}
 }
 
@@ -55,9 +57,11 @@ void CharacterSelectButtonObject::Init(int slotNumber, float PosX, float PosY, f
 	slotSelectImage->SetPosition(D3DXVECTOR3(_position.x, _position.y,0));
 	if (GM.slots.size() > _slotNumber)
 	{
-		printf("%f %f", MainCamera.ScreenToWorldPoint(_position).x, MainCamera.ScreenToWorldPoint(_position).y);
-		//MS.AddCharacter(_slotNumber, MainCamera.ScreenToWorldPoint(_position));
-		MS.AddCharacter(_slotNumber, (_position));
+		slotCharacter = new BaseCharacterObject();
+		slotCharacter->init(slotNumber);
+		slotCharacter->SetUiType();
+		slotCharacter->SetPosition(_position + D3DXVECTOR2(0, -50));
+		//MS.AddUIObject(slotCharacter);
 	}
 	
 }
@@ -82,6 +86,11 @@ void CharacterSelectButtonObject::FixedUpdate()
 void CharacterSelectButtonObject::Frame()
 {
 	Input.ScreenToWorldPoint(mouseX, mouseY);
+	if (slotCharacter != nullptr)
+	{
+		slotCharacter->Frame();
+	}
+		
 	slotSelectImage->SetRect();
 
 	//마우스 위치가 범위 내에 있는지 확인해서 슬롯 정보에 대해 반환하기
@@ -97,8 +106,12 @@ void CharacterSelectButtonObject::Frame()
 				{
 					btnOK = true;
 					//버튼 클릭했을때 이벤트
-					printf("OK %d \n", _slotNumber);
-					MS.ChangeScene(sceneNames::Scene_Elvenguard);
+					if (slotCharacter != nullptr)
+					{
+						printf("OK %d \n", _slotNumber);
+						//TODO:게임 마스터에게 current 케릭터를 가지고 있게 한다.
+						MS.ChangeScene(sceneNames::Scene_Elvenguard);
+					}
 				}				
 			}
 			else
@@ -121,5 +134,11 @@ void CharacterSelectButtonObject::Shutdown()
 	{
 		slotSelectImage->Shutdown();
 		delete slotSelectImage;
+	}
+
+	if (slotCharacter != NULL)
+	{
+		slotCharacter->Shutdown();
+		delete slotCharacter;
 	}
 }
