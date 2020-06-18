@@ -37,6 +37,7 @@ public:
 	HRESULT ChangeScene(sceneNames sceneNumber);
 	void AddCharacter(int slotNum, D3DXVECTOR2 position);
 	void AddUIObject(GameObject* ui);
+	void UIClear();
 public:
 	bool sceneLoadOk = false;
 	bool sceneUpdateLock = true;

@@ -98,13 +98,7 @@ HRESULT MasterScene::ChangeScene(sceneNames sceneNumber)
 	sceneLoadOk = false;
 	//로딩 이미지 켜기
 	
-	for (int i = 1; i < UI.size(); i++)
-	{
-		UI[UI.size() - i]->Shutdown();
-		delete UI[UI.size() - i];
-	}
-
-	UI.clear();
+	
 	switch (sceneNumber)
 	{
 	case sceneNames::None:
@@ -140,13 +134,23 @@ void MasterScene::AddUIObject(GameObject* ui)
 	UI.push_back(ui);
 }
 
+void MasterScene::UIClear()
+{
+	for (int i = 1; i < UI.size(); i++)
+	{
+		UI[UI.size() - i]->Shutdown();
+		delete UI[UI.size() - i];
+	}
+
+	UI.clear();
+}
+
 void MasterScene::LoadScene_CharacterSelect()
 {
 	//IMAGEMANAGER.LoadImagePack(1);
 	SetScreenLimit(0, 0, 0, 0); //화면이 좌우로 움직일 필요가 없으므로
 	//배경과 버튼들
 	//BackgroundSpriteObject* sgo;
-	//MainCamera.SetPostion(App.DxscreenWidth * 0.5f, App.DxscreenHeight * 0.5f, 0);
 	CharacterSelectButtonObject* CSBtn;
 	int index = 0;
 	//UI 타입이니까 화면 기준으로 위치 잡아주세요

@@ -110,6 +110,7 @@ void CharacterSelectButtonObject::Frame()
 					{
 						printf("OK %d \n", _slotNumber);
 						//TODO:게임 마스터에게 current 케릭터를 가지고 있게 한다.
+						MS.UIClear();
 						MS.ChangeScene(sceneNames::Scene_Elvenguard);
 					}
 				}				
