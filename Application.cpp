@@ -77,7 +77,10 @@ void Application::Run()
 		{
 			Time.Update();
 			//옵션이 변경되면 여기서 체크해서 적용되게 해주세요.
-			if (Time.CheckFPSLimit())
+			//씬 넘어갈때 시간이 와르르 흐르는 문제가 있음. 2020-06-18
+			//UIClear 함수로 교체 후 해결됨 
+			//해당문제가 다시 발생할경우 MasterScene의 ChangeScene에서 Time.Update의 주석처리를 지울것. 2020-06-18
+			if (Time.CheckFPSLimit()) 
 			{
 				Input.Frame();				
 				DxM.BeginScene(0.5f, 0.5f, 0.5f, 1.0f);
@@ -86,6 +89,7 @@ void Application::Run()
 				MS.FrameUpdate();
 				DxM.DisableAlphaBlending();
 				DxM.EndScene();
+				//Sleep(16.666666666666666666666666666667);//60fps?
 			}
 		}
 	}

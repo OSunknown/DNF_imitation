@@ -45,7 +45,7 @@ void BaseCharacterObject::FixedUpdate()
 
 void BaseCharacterObject::Frame()
 {	
-	//프레임을 그리기전에 매번 솔팅해줄것?(장비가 교체됬다면..);
+	//프레임을 그리기전에 매번 정렬해줄것?(장비가 교체됬다면..);
 	sort(equipEquipment.begin(), equipEquipment.end(), SortCondition);
 
 	for (int i = 0; i < equipEquipment.size(); i++)
@@ -154,8 +154,16 @@ void BaseCharacterObject::Idle()
 
 void BaseCharacterObject::Walk()
 {
+	for (size_t i = 0; i < equipEquipment.size(); i++)
+	{
+		equipEquipment[i].Walk();
+	}
 }
 
 void BaseCharacterObject::Run()
 {
+	for (size_t i = 0; i < equipEquipment.size(); i++)
+	{
+		equipEquipment[i].Run();
+	}
 }

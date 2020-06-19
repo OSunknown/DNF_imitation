@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "GameMaster.h"
-
+#include "BaseCharacterObject.h"
 GameMaster::GameMaster()
 {
 }
@@ -51,4 +51,40 @@ int GameMaster::SetCharacterData(char* data)
 		i++;*/
 	}slots.push_back(cdata);
 	return i;
+}
+
+BaseCharacterObject* GameMaster::GetCurrentCharacterObject()
+{
+	return _currentCharacterobject;
+}
+
+void GameMaster::SetCurrentCharacterObject(int slots)
+{
+	_currentCharacterobject = new BaseCharacterObject();
+	_currentCharacterobject->init(slots);
+	_currentCharacterobject->SetUiType();
+	_currentCharacterobject->SetPosition(D3DXVECTOR2(0,0));
+	havePlayableCharacter = true;
+}
+
+void GameMaster::CharacterMove(D3DXVECTOR2 movepoint, bool isRun)
+{
+	//임시 데이터입니다. DB 에서 받아와야할 데이터지만 일단 더미로.
+	float dummyWalkXSpeed = 0.5f;
+	float dummyRunXSpeed = 1.0f;
+	float dummyYmoveSpeed = 0.5f;
+	//
+
+	D3DXVECTOR2 movePosition = D3DXVECTOR2(0,0);
+	if (isRun == true)
+	{
+		movePosition.x = movepoint.x * dummyRunXSpeed + _currentCharacterobject->_position.x;
+	}
+	else
+	{
+		movePosition.x = movepoint.x * dummyWalkXSpeed + _currentCharacterobject->_position.x;
+	}
+	
+	movePosition.y = movepoint.y * dummyYmoveSpeed + _currentCharacterobject->_position.y;
+	_currentCharacterobject->SetPosition(movePosition);
 }

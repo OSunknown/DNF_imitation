@@ -60,6 +60,39 @@ void Camera::SetPostion(D3DXVECTOR3 position)
 	_position.z = -100;
 }
 
+void Camera::trackPosition(D3DXVECTOR2 position)
+{
+	if (GM.havePlayableCharacter == false)
+		return;
+	
+
+	_position.x = position.x;
+	_position.y = position.y;
+
+	if (_position.x > _right)
+	{
+		_position.x = _right;
+	}
+	if (_position.x < _left)
+	{
+		_position.x = _left;
+	}
+
+	if (_position.y > _top)
+	{
+		_position.y = _top;
+	}
+
+	if (_position.y < _bottom)
+	{
+		_position.y = _bottom;
+	}
+
+	_position.z = -100;
+
+	cout << _position.x << _position.y << _position.z << endl;
+}
+
 void Camera::SetRotation(float x, float y, float z)
 {
 	_rotation = D3DXVECTOR3(x, y, z);
@@ -129,6 +162,8 @@ void Camera::Render()
 
 	// Finally create the view matrix from the three updated vectors.
 	D3DXMatrixLookAtLH(&_viewMatrix, &_position, &lookAt, &up);
+
+	cout << _position.x << _position.y << _position.z << endl;
 }
 
 void Camera::GetViewMatrix(D3DXMATRIX & viewMatrix)
@@ -141,4 +176,9 @@ D3DXVECTOR2 Camera::ScreenToWorldPoint(D3DXVECTOR2 screenPoint)
 	float screenWidth = App.DxscreenWidth / 2.0f;
 	float screenHeight = App.DxscreenHeight / 2.0f;
 	return D3DXVECTOR2(_position.x + screenPoint.x - screenWidth,_position.y + screenPoint.y - screenHeight);
+}
+
+D3DXVECTOR2 Camera::WorldToScreenPoint(D3DXVECTOR2 worldPoint)
+{//TODO:월드 좌표를 스크린 좌표로 계산하는 방법이 필요해.
+	return D3DXVECTOR2();
 }

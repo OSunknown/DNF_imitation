@@ -108,7 +108,16 @@ public:
 	
 	vector<CharacterData> slots;
 public:
+	bool havePlayableCharacter = false;
+private:
+	BaseCharacterObject* _currentCharacterobject;
+public:
 	//선택된 케릭터 정보 주세요.
 	//getCurrentCharacter();
+	BaseCharacterObject* GetCurrentCharacterObject();
+	void SetCurrentCharacterObject(int slots);
+
+	void CharacterMove(D3DXVECTOR2 movepoint,bool isRun);
+
 };
 

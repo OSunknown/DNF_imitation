@@ -69,20 +69,23 @@ void EquipmentObject::Play()
 
 void EquipmentObject::Idle()
 {
+	cout << "EquipmentObject::Idle()" << endl;
 	_currentAnimator.SetBool("bIdle", true);
 	_currentAnimator.SetFloat("fSpeed", 0);
 }
 
 void EquipmentObject::Walk()
 {
+	cout << "EquipmentObject::Walk()" << endl;
 	_currentAnimator.SetBool("bIdle", false);
-	_currentAnimator.SetFloat("fSpeed", 5);
+	_currentAnimator.SetFloat("fSpeed",0.5f);
 }
 
 void EquipmentObject::Run()
 {
+	cout << "EquipmentObject::Run()" << endl;
 	_currentAnimator.SetBool("bIdle", false);
-	_currentAnimator.SetFloat("fSpeed", 10);
+	_currentAnimator.SetFloat("fSpeed", 1.0f);
 }
 
 void EquipmentObject::Jump()

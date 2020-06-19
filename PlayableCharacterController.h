@@ -17,7 +17,7 @@ public:
 	//생성된 케릭터(모델)에 대한 포인터 있어야됨
 	//생성된 케릭터(모델)에 대한 명령 보낼 수 있어야됨
 	//데미지 계산같은건 게임 매니저에다 보내서 생성하고
-	BaseCharacterObject * characterObject;
+	//BaseCharacterObject * characterObject;
 public:
 	bool _Filp;
 	bool _isRun;

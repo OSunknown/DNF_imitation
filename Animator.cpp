@@ -202,12 +202,13 @@ void Animator::CheckTransition()
 		}
 		if (bTransTrue == true)
 		{
+			cout << trans.targetAnime << endl;
 			_currentName = trans.targetAnime;
 			_currentAnimation = _mAnimations[trans.targetAnime];
 			_spriteNumber = 0;
 			_frameCount = 0;
+			break;
 		}
-		
 	}
 }
 

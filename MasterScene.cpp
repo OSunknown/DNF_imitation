@@ -49,8 +49,11 @@ void MasterScene::FrameUpdate(void)
 	if (_currentScene == sceneNames::None) return;
 
 
-
 	PCController.FixedUpdate();
+	if (GM.havePlayableCharacter == true)
+	{
+		//MainCamera.trackPosition(GM.GetCurrentCharacterObject()->_position);//일단 두고 후에 수정
+	}
 	//Render 프레임별로 도는 애니메이션 랜더 + 기본 바탕 뿌려줄것.
 	DxM.TurnZBufferOff();
 
@@ -59,8 +62,6 @@ void MasterScene::FrameUpdate(void)
 		Background[i]->Frame();
 	}
 	DxM.TurnZBufferOn();
-
-	//케릭터 선택창의 케릭터가 그려지고 있어야한다.
 
 	for (size_t i = 0; i < GameObjects.size(); i++)
 	{
@@ -88,7 +89,6 @@ void MasterScene::FrameUpdate(void)
 	}
 	DxM.TurnZBufferOn();
 
-	//MainCamera.AddPosition(_moveInput.x, _moveInput.y, 0);
 	//로딩이미지가 마지막에 있으면 모두 덮고 그려 질 수 있겠지.
 
 }
@@ -113,9 +113,9 @@ HRESULT MasterScene::ChangeScene(sceneNames sceneNumber)
 		LoadScene_Elvenguard();
 		break;
 	}
-
+	//Time.Update();
 	sceneLoadOk = true;
-	return E_NOTIMPL;
+	return S_OK;
 }
 
 void MasterScene::AddCharacter(int slotNum, D3DXVECTOR2 position)
@@ -168,6 +168,9 @@ void MasterScene::LoadScene_CharacterSelect()
 
 void MasterScene::LoadScene_Elvenguard()
 {
+	//Player 케릭터 가져오기
+	GameObjects.push_back(GM.GetCurrentCharacterObject());
+
 	BackgroundSpriteObject* sgo;
 	BackgroundAniObject* anigo;
 
@@ -516,4 +519,5 @@ void MasterScene::SetScreenLimit(float top, float left, float right, float butto
 	_LeftLimit = left;
 	_RightLimit = right;
 	_ButtomLimit = buttom;
+	MainCamera.SetLimit(_topLimit, _LeftLimit, _RightLimit, _ButtomLimit);
 }

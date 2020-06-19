@@ -453,6 +453,7 @@ void ImageManager::LoadPlayableCharacterPack()
 		trans.targetAnime = "walk";
 		trans.AddCondition(controller.StringToHash("bIdle"), 0, 0, 0);
 		trans.AddCondition(controller.StringToHash("fSpeed"), 2, 2, 0.49f);
+		trans.AddCondition(controller.StringToHash("fSpeed"), 2, 0, 0.51f);
 		controller.MakeTransition("idle", trans);
 		//idle > run
 		trans = Transition();
@@ -464,6 +465,7 @@ void ImageManager::LoadPlayableCharacterPack()
 		trans = Transition();
 		trans.targetAnime = "idle";
 		trans.AddCondition(controller.StringToHash("bIdle"), 0, 0, 1);
+		trans.AddCondition(controller.StringToHash("fSpeed"), 2, 0, 0.49f);
 		controller.MakeTransition("walk", trans);
 		//run > idle
 		trans = Transition();
