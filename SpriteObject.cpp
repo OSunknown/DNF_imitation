@@ -3,6 +3,7 @@
 SpriteObject::SpriteObject()
 {
 	_isTransfromChange = false;
+	UIType = false;
 	_vertexBuffer = NULL;
 	_indexBuffer = NULL;
 	m_vertexCount = 0;
@@ -370,6 +371,8 @@ void SpriteObject::SetRect()
 
 	// Calculate the screen coordinates of the bottom of the bitmap.
 	bottom = top - height;
+
+	cout << _position.x << "/" << _position.y << "//" << left << "/" << right << "/"<< top << "/" << bottom << endl;
 
 	if (UIType == true)
 	{

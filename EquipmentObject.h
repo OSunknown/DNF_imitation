@@ -29,6 +29,7 @@ public: //frame»©°í ¾È¾¸
 public:
 	void SetUiType();
 	void SetWorldObjectType();
+	void SetFlip(bool flip);
 public:
 	void Init();
 	void Play();

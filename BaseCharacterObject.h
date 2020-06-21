@@ -20,6 +20,7 @@ public:
 	//
 	void SetUiType();
 	void SetWorldObjectType();
+	void SetFlip(bool flip);
 	//Animation ต้
 	void Idle();
 	void Walk();

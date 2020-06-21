@@ -118,6 +118,7 @@ public:
 	void SetCurrentCharacterObject(int slots);
 
 	void CharacterMove(D3DXVECTOR2 movepoint,bool isRun);
+	void CharacterFilp(bool Filp);
 
 };
 

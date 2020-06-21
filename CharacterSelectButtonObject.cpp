@@ -38,7 +38,6 @@ void CharacterSelectButtonObject::Init(int slotNumber, float PosX, float PosY)
 		slotCharacter->init(slotNumber);
 		slotCharacter->SetUiType();
 		slotCharacter->SetPosition(_position + D3DXVECTOR2(0, -50));
-		MS.AddUIObject(slotCharacter);
 	}
 }
 
@@ -61,7 +60,6 @@ void CharacterSelectButtonObject::Init(int slotNumber, float PosX, float PosY, f
 		slotCharacter->init(slotNumber);
 		slotCharacter->SetUiType();
 		slotCharacter->SetPosition(_position + D3DXVECTOR2(0, -50));
-		//MS.AddUIObject(slotCharacter);
 	}
 	
 }
@@ -109,8 +107,7 @@ void CharacterSelectButtonObject::Frame()
 					if (slotCharacter != nullptr)
 					{
 						printf("OK %d \n", _slotNumber);
-						//TODO:게임 마스터에게 current 케릭터를 가지고 있게 한다.
-						//
+						//게임 마스터에게 current 케릭터를 가지고 있게 한다.
 						GM.SetCurrentCharacterObject(_slotNumber);
 						MS.UIClear();
 						MS.ChangeScene(sceneNames::Scene_Elvenguard);

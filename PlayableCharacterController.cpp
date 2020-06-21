@@ -39,6 +39,11 @@ void PlayableCharacterController::FixedUpdate()
 			{
 				_isRun = false;
 			}
+			if (_isMoveLeft == false && _isMoveRight == false)
+			{
+				GM.GetCurrentCharacterObject()->Idle();
+			}
+			
 			_moveInput.y = 0;
 		}
 	}
@@ -52,6 +57,10 @@ void PlayableCharacterController::FixedUpdate()
 			if (_isRun == true && (_isMoveLeft == false && _isMoveRight == false))
 			{
 				_isRun = false;
+			}
+			if (_isMoveLeft == false && _isMoveRight == false)
+			{
+				GM.GetCurrentCharacterObject()->Idle();
 			}
 			_moveInput.y = 0;
 		}
@@ -184,6 +193,7 @@ void PlayableCharacterController::FixedUpdate()
 		command.push_back(make_pair<string, float>("C", 0.8f));
 	}
 
+	GM.CharacterFilp(_Filp);
 	GM.CharacterMove(_moveInput, _isRun);
 
 	//시간이 지난 커맨드 키는 날려준다.

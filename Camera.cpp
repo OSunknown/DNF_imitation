@@ -90,7 +90,7 @@ void Camera::trackPosition(D3DXVECTOR2 position)
 
 	_position.z = -100;
 
-	cout << _position.x << _position.y << _position.z << endl;
+	cout << _position.x <<"/" << _position.y << "/" << _position.z << "//"<< position.x << "/" << position.y << endl;
 }
 
 void Camera::SetRotation(float x, float y, float z)
@@ -163,7 +163,7 @@ void Camera::Render()
 	// Finally create the view matrix from the three updated vectors.
 	D3DXMatrixLookAtLH(&_viewMatrix, &_position, &lookAt, &up);
 
-	cout << _position.x << _position.y << _position.z << endl;
+	
 }
 
 void Camera::GetViewMatrix(D3DXMATRIX & viewMatrix)
@@ -180,5 +180,7 @@ D3DXVECTOR2 Camera::ScreenToWorldPoint(D3DXVECTOR2 screenPoint)
 
 D3DXVECTOR2 Camera::WorldToScreenPoint(D3DXVECTOR2 worldPoint)
 {//TODO:월드 좌표를 스크린 좌표로 계산하는 방법이 필요해.
-	return D3DXVECTOR2();
+	float screenWidth = App.DxscreenWidth / 2.0f;
+	float screenHeight = App.DxscreenHeight / 2.0f;
+	return D3DXVECTOR2(worldPoint.x + screenWidth, worldPoint.y + screenHeight);
 }

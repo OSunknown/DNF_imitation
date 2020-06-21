@@ -52,7 +52,7 @@ void MasterScene::FrameUpdate(void)
 	PCController.FixedUpdate();
 	if (GM.havePlayableCharacter == true)
 	{
-		//MainCamera.trackPosition(GM.GetCurrentCharacterObject()->_position);//일단 두고 후에 수정
+		MainCamera.trackPosition(GM.GetCurrentCharacterObject()->_position);//일단 두고 후에 수정
 	}
 	//Render 프레임별로 도는 애니메이션 랜더 + 기본 바탕 뿌려줄것.
 	DxM.TurnZBufferOff();

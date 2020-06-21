@@ -62,7 +62,6 @@ void GameMaster::SetCurrentCharacterObject(int slots)
 {
 	_currentCharacterobject = new BaseCharacterObject();
 	_currentCharacterobject->init(slots);
-	_currentCharacterobject->SetUiType();
 	_currentCharacterobject->SetPosition(D3DXVECTOR2(0,0));
 	havePlayableCharacter = true;
 }
@@ -70,9 +69,9 @@ void GameMaster::SetCurrentCharacterObject(int slots)
 void GameMaster::CharacterMove(D3DXVECTOR2 movepoint, bool isRun)
 {
 	//임시 데이터입니다. DB 에서 받아와야할 데이터지만 일단 더미로.
-	float dummyWalkXSpeed = 0.5f;
-	float dummyRunXSpeed = 1.0f;
-	float dummyYmoveSpeed = 0.5f;
+	float dummyWalkXSpeed = 100.0f * Time.GetDeltaTime();
+	float dummyRunXSpeed = 150.0f * Time.GetDeltaTime();
+	float dummyYmoveSpeed = 50.0f * Time.GetDeltaTime();
 	//
 
 	D3DXVECTOR2 movePosition = D3DXVECTOR2(0,0);
@@ -87,4 +86,9 @@ void GameMaster::CharacterMove(D3DXVECTOR2 movepoint, bool isRun)
 	
 	movePosition.y = movepoint.y * dummyYmoveSpeed + _currentCharacterobject->_position.y;
 	_currentCharacterobject->SetPosition(movePosition);
+}
+
+void GameMaster::CharacterFilp(bool Filp)
+{
+	_currentCharacterobject->SetFlip(Filp);
 }

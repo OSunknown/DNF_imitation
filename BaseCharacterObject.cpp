@@ -144,6 +144,14 @@ void BaseCharacterObject::SetWorldObjectType()
 	}
 }
 
+void BaseCharacterObject::SetFlip(bool flip)
+{
+	for (size_t i = 0; i < equipEquipment.size(); i++)
+	{
+		equipEquipment[i].SetFlip(flip);
+	}
+}
+
 void BaseCharacterObject::Idle()
 {
 	for (size_t i = 0; i < equipEquipment.size(); i++)

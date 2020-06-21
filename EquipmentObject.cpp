@@ -46,14 +46,19 @@ void EquipmentObject::Shutdown()
 	}
 }
 
-void EquipmentObject::SetUiType()
+void EquipmentObject::SetUiType() //UI 좌표계로 사용해야할때
 {
 	_currentsprite->UIType = true;
 }
 
-void EquipmentObject::SetWorldObjectType()
+void EquipmentObject::SetWorldObjectType() //기본값은 이쪽
 {
 	_currentsprite->UIType = false;
+}
+
+void EquipmentObject::SetFlip(bool flip)
+{
+	_currentsprite->Filp = flip;
 }
 
 void EquipmentObject::Init()
