@@ -180,7 +180,7 @@ void MasterScene::LoadScene_CharacterSelect()
 	//배경과 버튼들
 	//BackgroundSpriteObject* sgo;
 	CharacterSelectButtonObject* CSBtn;
-	int index = 0;
+	int index = 0; //
 	//UI 타입이니까 화면 기준으로 위치 잡아주세요
 	for (int i = 0; i < 2; i++)
 	{
