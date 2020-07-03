@@ -77,15 +77,18 @@ void GameMaster::CharacterMove(D3DXVECTOR2 movepoint, bool isRun)
 	D3DXVECTOR2 movePosition = D3DXVECTOR2(0,0);
 	if (isRun == true)
 	{
-		movePosition.x = movepoint.x * dummyRunXSpeed + _currentCharacterobject->_position.x;
+		movePosition.x = movepoint.x * dummyRunXSpeed  ;
 	}
 	else
 	{
-		movePosition.x = movepoint.x * dummyWalkXSpeed + _currentCharacterobject->_position.x;
+		movePosition.x = movepoint.x * dummyWalkXSpeed;
 	}
 	
-	movePosition.y = movepoint.y * dummyYmoveSpeed + _currentCharacterobject->_position.y;
-	_currentCharacterobject->SetPosition(movePosition);
+	movePosition.y = movepoint.y * dummyYmoveSpeed ;
+
+	//Master Scene에 전달해서 갈수 있는 위치인지 체크.
+	
+	_currentCharacterobject->SetPosition(MS.moveAreaCheck(movePosition, _currentCharacterobject->_position));
 }
 
 void GameMaster::CharacterFilp(bool Filp)

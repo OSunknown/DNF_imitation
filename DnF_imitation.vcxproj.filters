@@ -72,9 +72,6 @@
     <ClCompile Include="ImageManager.cpp">
       <Filter>GameCore\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="ElvenguardScene.cpp">
-      <Filter>GameCore\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="TextureShaderClass.cpp">
       <Filter>GameCore\Shaders\ShaderClass</Filter>
     </ClCompile>
@@ -101,9 +98,6 @@
     </ClCompile>
     <ClCompile Include="NetworkManager.cpp">
       <Filter>GameCore\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterSelectScene.cpp">
-      <Filter>GameCore\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="MasterScene.cpp">
       <Filter>GameCore\Scenes</Filter>
@@ -149,9 +143,6 @@
     <ClInclude Include="Camera.h">
       <Filter>GameCore</Filter>
     </ClInclude>
-    <ClInclude Include="ElvenguardScene.h">
-      <Filter>GameCore\Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="TextureShaderClass.h">
       <Filter>GameCore\Shaders\ShaderClass</Filter>
     </ClInclude>
@@ -181,9 +172,6 @@
     </ClInclude>
     <ClInclude Include="NetworkManager.h">
       <Filter>GameCore\Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="CharacterSelectScene.h">
-      <Filter>GameCore\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="MasterScene.h">
       <Filter>GameCore\Scenes</Filter>

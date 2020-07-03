@@ -90,7 +90,7 @@ void Camera::trackPosition(D3DXVECTOR2 position)
 
 	_position.z = -100;
 
-	cout << _position.x <<"/" << _position.y << "/" << _position.z << "//"<< position.x << "/" << position.y << endl;
+	//cout << _position.x <<"/" << _position.y << "/" << _position.z << "//"<< position.x << "/" << position.y << endl;
 }
 
 void Camera::SetRotation(float x, float y, float z)

@@ -42,7 +42,7 @@ public:
 	bool sceneLoadOk = false;
 	bool sceneUpdateLock = true;
 	
-	
+	D3DXVECTOR2 moveAreaCheck(D3DXVECTOR2 movepoint, D3DXVECTOR2 position);
 private:
 	sceneNames _currentScene;
 	D3DXVECTOR3 _moveInput;

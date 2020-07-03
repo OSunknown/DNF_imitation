@@ -39,7 +39,7 @@ HRESULT Application::Init(HINSTANCE hInstance)
 	IMAGEMANAGER.Init();
 	Input.Init(hInstance, _hWnd, 747, 560);
 	MainCamera.Init();
-	Time.Init(300);
+	Time.Init(60);
 	//모두 설정한 뒤에 send를 해야됨
 	Network.Send("1@DeusEx"); //user id
 	return S_OK;

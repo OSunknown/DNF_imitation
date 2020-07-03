@@ -68,10 +68,6 @@ void MasterScene::FrameUpdate(void)
 		GameObjects[i]->Frame();
 	}
 	DxM.TurnZBufferOn();
-	//맵 상에 몬스터가 남았다면..
-	//Player._HereIsAMonster = true;
-	//player render
-	//Player.Render();
 
 
 	DxM.TurnZBufferOff();
@@ -96,8 +92,7 @@ void MasterScene::FrameUpdate(void)
 HRESULT MasterScene::ChangeScene(sceneNames sceneNumber)
 {
 	sceneLoadOk = false;
-	//로딩 이미지 켜기
-	
+	//로딩 이미지 켜기	
 	
 	switch (sceneNumber)
 	{
@@ -145,6 +140,39 @@ void MasterScene::UIClear()
 	UI.clear();
 }
 
+D3DXVECTOR2 MasterScene::moveAreaCheck(D3DXVECTOR2 movepoint, D3DXVECTOR2 position)
+{
+	//오브젝트들 다 체크해야하나?
+	//세로 체크, 가로 체크, 대각선 체크 후 넘어가야함.
+	//1차적으로 리미트 부분만 체크해보자.
+	float x = movepoint.x + position.x;
+	float y = movepoint.y + position.y;
+	if (x > _RightLimit)
+	{
+		x = position.x;
+	}
+	if (x < _LeftLimit)
+	{
+		x = position.x;
+	}
+
+	if (y > _topLimit)
+	{
+		y = position.y;
+	}
+
+	if (y < _ButtomLimit)
+	{
+		y = position.y;
+	}
+	movepoint.x = x;
+	movepoint.y = y;
+
+	//범위를 가진 콜라이더들에게 보내고 안에 있는지 확인. 
+	//확인되면MS에 충돌된 콜라이더 확인.
+	return movepoint;
+}
+
 void MasterScene::LoadScene_CharacterSelect()
 {
 	//IMAGEMANAGER.LoadImagePack(1);
@@ -175,6 +203,8 @@ void MasterScene::LoadScene_Elvenguard()
 	BackgroundAniObject* anigo;
 
 	SetScreenLimit(280, -1254, 1254, -280);
+	//케릭터의 위치를 전달. (세리아 방 입구 좌표 임시)
+	GM.GetCurrentCharacterObject()->SetPosition(D3DXVECTOR2(-682.0f, -69.0f));
 	//Pack 로드 
 	IMAGEMANAGER.LoadImagePack(1);
 

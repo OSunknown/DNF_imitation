@@ -130,9 +130,7 @@
     <ClCompile Include="BaseCharacterObject.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CharacterSelectButtonObject.cpp" />
-    <ClCompile Include="CharacterSelectScene.cpp" />
     <ClCompile Include="DxManager.cpp" />
-    <ClCompile Include="ElvenguardScene.cpp" />
     <ClCompile Include="GameMaster.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="ImageObject.cpp" />
@@ -159,9 +157,7 @@
     <ClInclude Include="BaseCharacterObject.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CharacterSelectButtonObject.h" />
-    <ClInclude Include="CharacterSelectScene.h" />
     <ClInclude Include="DxManager.h" />
-    <ClInclude Include="ElvenguardScene.h" />
     <ClInclude Include="GameMaster.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="ImageObject.h" />

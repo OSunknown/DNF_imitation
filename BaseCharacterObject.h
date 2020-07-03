@@ -61,10 +61,3 @@ public:
 	int _slotNum;
 	string jobID;
 };
-
-//CharacterSpriteObject 
-/* 내부 위치 필요.
-Base CharacterObject 가 부모 오브젝트로 가나?
-Animator 를 보유하고 있는 형태로 가면어때?
-여러개의 이미지를 한번에 그릴 수 있게 쉐이더를 만들어볼까?
-*/
