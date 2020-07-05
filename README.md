@@ -13,7 +13,7 @@ Direct x에서는 게임 구조를 어떻게 구성 해야 할지 연구하기 �
 
 # 작업현황
 
-[![Video Label](http://img.youtube.com/vi/IughkTL7shk/0.jpg)](https://youtu.be/IughkTL7shk?t=0s)
+[![Video Label](http://img.youtube.com/vi/FkeopM20qaA/0.jpg)](https://www.youtube.com/watch?v=FkeopM20qaA&feature=youtu.be)
 
 ▲ 누르면 유튜브로 이동.
 
